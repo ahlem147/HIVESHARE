@@ -1,0 +1,46 @@
+<div class="mt-4"> <!-- Ajoute une marge top de 4 unités Bootstrap -->
+
+
+    <div class="vertical-menu" [ngClass]="{'collapsed': isSidebarCollapsed}">
+        <div>
+            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+            (click)="toggleSidebar()" id="vertical-menu-btn">
+            <i class="fa fa-fw fa-bars"></i>
+        </button>
+        </div> 
+        <div data-simplebar class="h-100">
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+             
+                <!-- Admin Menu Start -->
+                <ul class="metismenu list-unstyled" id="side-menu">
+                    <li *ngIf="user.role === 'admin'">
+                        <a routerLink="/dashboard/static" class="waves-effect">
+                            <i class="bx bx-home-circle"></i>
+                            <span key="t-dashboards">Dashboards</span>
+                        </a>
+                    </li>
+                    <li *ngIf="user.role === 'admin'">
+                        <a routerLink="/dashboard/client" class="has-arrow waves-effect">
+                            <i class="bx bx-layout"></i>
+                            <span key="t-layouts">Gestion Clients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/dashboard/projects" class="has-arrow waves-effect">
+                            <i class="bx bx-briefcase-alt-2"></i>
+                            <span key="t-projects">Gestion Projets</span>
+                        </a>
+                    </li>
+                    <li *ngIf="user.role === 'admin'">
+                        <a routerLink="/dashboard/employers" class="has-arrow waves-effect">
+                            <i class="bx bxs-user-detail"></i>
+                            <span key="t-contacts">Gestion Membres</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Sidebar -->
+        </div>
+    </div>
+</div>

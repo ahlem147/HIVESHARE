@@ -1,0 +1,9 @@
+.vertical-menu {
+    transition: all 0.3s ease;
+  }
+  
+  .vertical-menu.collapsed {
+    width: 10px; /* Ou la largeur minimale souhaitée */
+    /* Ajoutez d'autres styles nécessaires pour masquer ou minimiser le sidebar */
+  }
+  
